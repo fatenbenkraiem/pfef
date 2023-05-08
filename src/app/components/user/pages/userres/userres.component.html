@@ -1,0 +1,79 @@
+<app-userheader></app-userheader>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <app-usersidebar></app-usersidebar>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Liste des Ressources</h1>
+                        <div class="search">
+                            <input
+                              type="text"
+                              [(ngModel)]="term"
+                              class="searchTerm"
+                              placeholder="Que cherchez-vous?"/>
+                             <mat-icon>search</mat-icon>
+                        </div>
+                    <br>
+                          
+                          <div class="row  " >
+                            <div  class="col-lg-6 col-md-6 mt-4 mt-md-0"  *ngFor="let actualite of actualitesRes| slice:(currentPage - 1) * itemsPerPage : currentPage * itemsPerPage  | filter: term  ">
+                             
+                              <div class="card">
+                                <div class="card-horizontal">
+                                    <div class="img-square-wrapper">
+                                        <img src="assets/formation/{{actualite.image}}"
+                                                style="width: 100px; height: 100px;" />
+                                    </div>
+                                    <div class="card-body">
+                                      <div class="header">
+                                        <h5 class="card-title">{{actualite.name}}</h5>
+                                        
+                                      </div>
+                                        <p class="card-text">{{actualite.description}}</p>
+                                    </div>
+                                    <div>
+                                        <button  [routerLink]="['/user/reserve']">Réserver</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
+            
+                        <!--div class="card-body">
+                            <table class="dataTable-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let actualite of actualitesRes | slice:(currentPage - 1) * itemsPerPage : currentPage * itemsPerPage  | filter: term  "   >
+                                        <td>{{ actualite.name }}</td>
+                                        <td>
+                                            <p> {{ actualite.description }}</p>
+                                        </td>
+                                        <td>
+                                            <img src="assets/formation/{{actualite.image}}"
+                                                style="width: 50px; height: 50px;" />
+                                        </td>
+                                
+
+                                    </tr>
+                                    <tr *ngIf="totalActualites == 0">
+                                        <td colspan="4" style="text-align: center;">Aucune Ressource publié!</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="previous-button" (click)="currentPage = currentPage - 1">Précédent</button>
+                            <button class="next-button" (click)="currentPage = currentPage + 1">Suivant</button>
+                        </div-->
+                    </div>
+                    <button class="previous-button" (click)="currentPage = currentPage - 1">Précédent</button>
+                    <button class="next-button" (click)="currentPage = currentPage + 1">Suivant</button>
+        </main>
+    </div>
+</div>

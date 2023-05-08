@@ -1,0 +1,36 @@
+*{
+    background-color: #9aa8e0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    list-style: none;   
+    margin: 1; 
+}
+
+
+  
+#sidebarToggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #f2f2f2;
+    background-color: #f2f2f2;
+  }
+  
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #f2f2f2;
+  }
+  

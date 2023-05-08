@@ -1,0 +1,63 @@
+
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" [ngClass]="status ? 'hide' : 'show'">
+        <div id="dismiss" (click)="clickEvent2()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+        </div>
+        <ul class="list-unstyled components">
+          <!--img src="assets/user/user.jpg" id="avatar" style="width: 50px; height: 50px;"-->
+            <h1>{{user.nom}}</h1>
+            <li >
+                      <a routerLinkActive="list-item-active" [routerLink]="['/user/res']">
+                        <mat-icon>home</mat-icon> Home
+                      </a>
+            </li>
+            <li>
+              <a  routerLinkActive="list-item-active" [routerLink]="['/user/reserve']">
+                <mat-icon>event_note</mat-icon>Mes Réservations
+              </a>
+            </li>
+            <li>
+              <a  routerLinkActive="list-item-active" [routerLink]="['/user/edit']">
+                <mat-icon>account_circle</mat-icon> profil
+              </a>
+            </li>
+        </ul>
+    </nav>
+    
+<!-- Page Content  -->
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="clickEvent()">
+              <mat-icon>menu</mat-icon>
+                
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>class="active"
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                </ul>
+            </div-->
+        </div>
+    </nav>
+</div>
+  </div>
+  <!--div class="overlay"  [ngClass]="status ? 'active' : ''"></div-->

@@ -1,0 +1,13 @@
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a href="#"></a></h1>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a [routerLink]="['/login']" (click)="gotoTop()" class="nav-link scrollto" *ngIf="!au.isUserLoggedIn()">Ressources</a></li>
+                <li><a [routerLink]="['/login']" (click)="gotoTop()" class="nav-link scrollto" *ngIf="!au.isUserLoggedIn()">Réservation</a></li>
+                <li><a [routerLink]="['/CONTACT']" (click)="gotoTop()" class="nav-link scrollto" >Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
